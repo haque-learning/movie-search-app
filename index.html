@@ -2,35 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Movie Search App</title>
-    <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <h1>Movie Search App</h1>
-      <form id="search-form">
+      <form id="search-form" role="search">
         <input
           type="text"
           id="search-input"
           placeholder="Search for a movie..."
+          aria-label="Search movies by title"
+          autocomplete="off"
         />
-        <button type="submit">Search</button>
+        <button type="submit" aria-label="Search">Search</button>
       </form>
     </header>
-    <div id="loading" style="display: none">Loading...</div>
-    <div id="error" style="display: none"></div>
-    <div id="results" class="results-grid"></div>
-    <div id="favorites" class="favorites-section">
-      <h2>Favorites</h2>
-      <div id="favorites-list"></div>
-    </div>
-    <div id="modal" class="modal" style="display: none">
+    <main>
+      <section
+        id="loading"
+        class="loading"
+        aria-live="polite"
+        style="display: none"
+      >
+        Loading...
+      </section>
+      <section
+        id="error"
+        class="error"
+        aria-live="assertive"
+        style="display: none"
+      ></section>
+      <section
+        id="results"
+        class="results-grid"
+        aria-label="Search results"
+      ></section>
+      <section id="favorites" class="favorites-section">
+        <h2>Favorites</h2>
+        <div id="favorites-list" aria-label="Favorite movies"></div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        © 2025 Movie Search App. Powered by
+        <a
+          href="http://www.omdbapi.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="OMDB API"
+          >OMDB API</a
+        >.
+      </p>
+    </footer>
+    <div id="modal" class="modal" role="dialog" style="display: none">
       <div class="modal-content">
-        <span id="modal-close">X</span>
+        <button id="modal-close" aria-label="Close modal">X</button>
         <div id="modal-details"></div>
       </div>
     </div>
-    <script type="module" src="./src/js/script.js"></script>
+    <script type="module" src="src/js/script.js"></script>
   </body>
 </html>
