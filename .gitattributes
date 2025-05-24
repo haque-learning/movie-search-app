@@ -1,0 +1,11 @@
+# Ensure JSON files use LF line endings
+*.json text eol=lf
+
+# Ensure JavaScript, HTML, and CSS files use LF for consistency
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+# Binary files (if you add images later)
+*.jpg binary
+*.png binary

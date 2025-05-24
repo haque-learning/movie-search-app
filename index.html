@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="./src/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Movie Search App</h1>
+      <form id="search-form">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for a movie..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </header>
+    <div id="loading" style="display: none">Loading...</div>
+    <div id="error" style="display: none"></div>
+    <div id="results" class="results-grid"></div>
+    <div id="favorites" class="favorites-section">
+      <h2>Favorites</h2>
+      <div id="favorites-list"></div>
+    </div>
+    <div id="modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span id="modal-close">X</span>
+        <div id="modal-details"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/js/script.js"></script>
+  </body>
+</html>
